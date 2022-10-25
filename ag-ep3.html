@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Abandoned Genius - Episode 3</title>
+  <link rel="stylesheet" href="episodes.css">
+  <link rel="stylesheet" href="nmag.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="links">
+      <span class="logo">Nmwrites</span>
+      <a href="nmag.html">Home</a>
+      <a href="ag-ep1.html">Episode 1</a>
+      <a href="ag-ep2.html">Episode 2</a>
+      <a href="ag-ep3.html">Episode 3</a>
+      <a href="ag-ep4.html" class="sm-el">Episode 4</a>
+      <a href="ag-ep5.html" class="sm-el">Episode 5</a>
+      <a href="ag-ep6.html" class="sm-el">Episode 6</a>
+      <a href="ag-ep7.html" class="sm-el">Episode 7</a>
+      <a href="ag-ep8.html" class="sm-el">Episode 8</a>
+      <a href="ag-ep9.html" class="sm-el">Episode 9</a>
+      <a href="ag-ep10.html" class="sm-el">Episode 10</a>
+    </nav>
+    <button class="seemore">See more...</button>
+  </header>
+  <div class="cont">
+    <button class="seemore btn float-right speaker">&#128266;</button>
+    <section class="section">
+      <h1>The Abandoned Genius</h1>
+      <h2>Episode 3</h2>
+    <p>Now I could no longer experience those warm nights and cold mornings with mom!</p>
+
+    <p>Mom was gone for good!</p>
+
+   <p>At some point I got famished. There was nothing to eat!</p>
+
+    <p>At five I developed a feeling of the need to know but my stomach could not spare me to think.</p>
+
+    <p>I gently marched around the forest, examining it's trees.</p>
+
+    <p>After walking a distance from where I had spent the previous night, I could not secure anything that was good for the stomach.</p>
+
+   <p>I walked even farther and farther.
+
+      After walking miles, I clashed with a small stream that streamed down the forest.
+    </p>
+
+    <p>I quenched my thirst from the crystal clear water.</p>
+
+    <p>After I had stood up from my knees, I sensed as if someone was behind me, fear gripped me. I turned gently to behold which ever monster was staring.</p>
+
+    <p>To my surprise, I saw a bird feeding from a guava fruit! Although I couldn't conclude whether it was food or not but I sensed that if birds would eat it to survive, I will definitely do too.</p>
+
+    <p>I could not spare a step as I ran to the guava and ate to my satisfaction.</p>
+
+   <p>_______</p>
+
+    <p>At evening I'd be cuddled by the east wind, at night I would weep. At day I would yearn for survival.</p>
+
+    <p>This became my routine every single day in the woods.</p>
+
+    <p>At this point, my bones couldn't stop stretching as the sun set and rose on me.</p>
+
+    <p>Those season of fear had to leave! The trauma of fear was coerced out of my being as days turned months and years.</p>
+
+    <p>Every morning, I'd wake and listen to the melodious voices of those birds that kept me company at day. I was always sad not having them at night.</p>
+
+    <p>I also played around with butterflies. I gave names to birds and insects. Whenever I saw the same insect again, I'd recall it's name.</p>
+
+    <p>Overtime, guava exited it's season, I had to stick to another food supply. I ate foods that were never tagged food.</p>
+
+    <p>At seven, I had already adapted to my new environment. My specialty was none the less hidden.</p>
+
+    <p>I knew at this point the world I was!
+       Somehow, The memory of mom was gone.</p>
+
+     <p>I was facing reality, though with dreams.</p>
+     <p>I was a wasting genius!!!</p>
+
+    <small>✍️ Bala Mathias.</small>
+    </section>
+    <a href="ag-ep2.html" class="btn float">Prev</a>
+    <a href="ag-ep4.html" class="float float-right">Next</a>
+  </div>
+  <footer class="footer">
+      <p>© <span class="text-pink">nmwrites</span> 2021 - <span class="year"></span></p>
+      <a href="about.html">About</a>
+      | <a href="nmag.html">Stories</a>
+    </footer>
+  <script>
+    let seemore = document.querySelector(".seemore")
+    let seemoreEls = document.getElementsByClassName("sm-el")
+    console.log(seemoreEls)
+    
+    let sm = 0 
+    let isseemore = false
+    seemore.addEventListener("click", () =>{
+      sm += 1 
+      for (let el=0; el < seemoreEls.length; el++){
+        console.log(el)
+        if (sm % 2 != 0){
+        seemoreEls[el].style.display = "block"
+        seemore.innerText = "See less..."
+        } else {
+        seemoreEls[el].style.display = "none"
+        seemore.innerText = "See more..."
+        }
+      }
+    })
+    
+    let date = new Date()
+    let year = date.getFullYear()
+    document.querySelector(".year").innerHTML = year
+
+    let speech = new SpeechSynthesisUtterance()
+    let tag = document.querySelector(".speaker")
+    let msg = document.querySelector(".section")
+
+    tag.addEventListener("click",() => {
+    let mssg = msg.innerText
+    console.log(mssg)
+    speech.text = mssg;
+    speechSynthesis.speak(speech)
+    
+    let voice = speechSynthesis.getVoices()
+    speech.voice = voice[15]
+    speech.lang = "en-US"
+    
+    let interval = setInterval(() => {
+      if (speechSynthesis.speaking){
+        tag.classList.add("spk")
+        clearInterval(interval)
+      }
+    },100)
+  })
+    </script>
+</body>
+</html>

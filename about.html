@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>About nmwrites</title>
+  <link rel="stylesheet" href="episodes.css">
+  <link rel="stylesheet" href="nmag.css" >
+  <style>
+    ul:marker{
+      color:pink;
+    }
+    li{
+      line-height: 25px !important
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="links">
+      <span class="logo">Nmwrites</span>
+      <a href="nmag.html">Home</a>
+    </nav>
+    <button class="seemore" onclick="history.back()">«« Back</button>
+  </header>
+  <div class="cont">
+    <section class="section">
+      <button class="seemore btn float-right speaker">&#128266;</button>
+      <pre class="story-content">
+        <h2>About nmwrites</h2>
+        <b>Nmwrites</b> is a "New Mountain Network " sub-organization specialized in <i>Story writing...</i>
+        
+        <b>Nmwrites</b> also goes a long way in Article writing, essays, dramas, poems and lots of them.
+        
+        It was solely launched in October 2022 by the <b>New Mountain networks</b> - a multi-organization diversified in...
+        <ul>
+          <li>Web Development</li>
+          <li>Software engineering</li>
+          <li>Storytelling</li>
+          <li>Public speaking</li>
+          <li>Education</li>
+        </ul>
+        ...and lots more.
+      </pre>
+
+    <small>✍️ nmwrites</small>
+    </section>
+    <button class="btn float" onclick="history.back()">Prev</button>
+  </div>
+  <footer class="footer">
+      <p>© <span class="text-pink">nmwrites</span> 2021 - <span class="year"></span></p>
+      <a href="about.html">About</a>
+      | <a href="nmag.html">Stories</a>
+    </footer>
+  <script>
+    let seemore = document.querySelector(".seemore")
+    let seemoreEls = document.getElementsByClassName("sm-el")
+    console.log(seemoreEls)
+    
+    let sm = 0 
+    let isseemore = false
+    seemore.addEventListener("click", () =>{
+      sm += 1 
+      for (let el=0; el < seemoreEls.length; el++){
+        console.log(el)
+        if (sm % 2 != 0){
+        seemoreEls[el].style.display = "block"
+        seemore.innerText = "See less..."
+        } else {
+        seemoreEls[el].style.display = "none"
+        seemore.innerText = "See more..."
+        }
+      }
+    })
+    
+    let date = new Date()
+    let year = date.getFullYear()
+    document.querySelector(".year").innerHTML = year
+
+    let speech = new SpeechSynthesisUtterance()
+    let tag = document.querySelector(".speaker")
+    let msg = document.querySelector(".story-content")
+
+    tag.addEventListener("click",() => {
+    let mssg = msg.innerText
+    console.log(mssg)
+    speech.text = mssg;
+    speechSynthesis.speak(speech)
+    
+    let voice = speechSynthesis.getVoices()
+    speech.voice = voice[15]
+    speech.lang = "en-US"
+     tag.classList.remove("spk")
+    
+    let interval = setInterval(() => {
+      if (speechSynthesis.speaking){
+        tag.classList.add("spk")
+        clearInterval(interval)
+      }
+    },100)
+  })
+    </script>
+</body>
+</html>

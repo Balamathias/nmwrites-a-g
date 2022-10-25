@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Abandoned Genius - Episode 4</title>
+  <link rel="stylesheet" href="episodes.css">
+  <link rel="stylesheet" href="nmag.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="links">
+      <span class="logo">Nmwrites</span>
+      <a href="nmag.html">Home</a>
+      <a href="ag-ep1.html">Episode 1</a>
+      <a href="ag-ep2.html">Episode 2</a>
+      <a href="ag-ep3.html">Episode 3</a>
+      <a href="ag-ep4.html" class="sm-el">Episode 4</a>
+      <a href="ag-ep5.html" class="sm-el">Episode 5</a>
+      <a href="ag-ep6.html" class="sm-el">Episode 6</a>
+      <a href="ag-ep7.html" class="sm-el">Episode 7</a>
+      <a href="ag-ep8.html" class="sm-el">Episode 8</a>
+      <a href="ag-ep9.html" class="sm-el">Episode 9</a>
+      <a href="ag-ep10.html" class="sm-el">Episode 10</a>
+    </nav>
+    <button class="seemore">See more...</button>
+  </header>
+  <div class="cont">
+    <button class="seemore btn float-right speaker">&#128266;</button>
+    <section class="section">
+      <h1>The Abandoned Genius</h1>
+      <h2>Episode 4</h2>
+      <p>Overtime, I grew from strength to strength and from wisdom to wisdom.
+
+      I always felt a greater force before and behind me that helped me survive the dreadful, monstrous and deadly forest.
+      </p>
+
+    <p>At nine, I had a near death experience.
+    
+      I've always been quiet all the time, my presence had never been noticed before but this time, I was rendered vulnerable.
+      </p>
+
+    <p>______</p>
+
+    <p>It was a season of technology and science advancement when an helicopter flew above the forest.
+
+     At it's distant sound I thought a monster or maybe the most dreadful of all monsters was on it's way.
+     </p>
+
+    <p>I ran to my hay and hid there.</p>
+
+    <p>I watched from a distance how the helicopter spinned across.
+
+I was very much impressed with the sight. I had a feeling that somehow, humans were mostly responsible for it.
+
+I gently let go of the first helicopter as I sat in my hay thinking about it.</p>
+
+    <p>Just then, I saw a dragon fly dangling in the air. I stared it closely and then compared it to what I had seen earlier.
+
+    Many thoughts led to the other and I went as far as comparing it with birds.</p>
+
+    <p>After sixteen days of meditating on what I had seen, I was able to deduce in my own primary experiment the reason why that thing could swim in air without falling.</p>
+
+    <p>______</p>
+
+    <p>After a few more days, I yearned to see the helicopter again. Luckily for me, I was able to.
+
+       This time, when I heard the sound from a distance, I ran out of my hay towards the direction of the helicopter.
+</p>
+    <p>I shouted and screamed for help but nay, it went by. I lost it!
+
+       Still with my eyes hung above the sky, facing the heavens and staring the direction it went.
+
+      I brought my head back down but to my surprise, I saw myself staring a tiger!</p>
+
+    <p>______</p>
+
+    <p>I couldn't wait for it to start chasing, I ran for my dear life.
+
+     The tiger took after me! I struggled through the forest and it chased too.
+
+      I lounged through the forest trees and shrubs but it was just few meters behind me.</p>
+
+    <p>I was almost giving up! I had concluded that my life was over at this point.
+
+      To worsen the case, I slipped and fell!
+       I had prepared myself for death. I found it hard to lift up myself again.</p>
+
+     <p>______</p>
+
+    <p>
+      Fortunately and miraculously, the Tiger jumped over me. When I stretched forth my eyes to see what it was chasing, I realized that it was an antelope.
+
+      I heaved a sigh of safety that sprawled the dry leaves on the ground. I dusted my worn out attires and headed for my hay.
+    </p>
+
+    <p>I couldn't trace my hay anymore! I remained amidst the forest wandering around and walking helter skelter.
+
+       Yet with dreams, I found a solace there, at least I could lay my head. I hoped to dream dreams of another world as the sun went dark on me.</p>
+
+    <p>At this point, I had lost the memory of my background. I only yearned for a better life.
+</p>
+     <p>I was a wasting genius!</p>
+
+    <small>✍️ Bala Mathias.</small>
+    </section>
+    <a href="ag-ep3.html" class="btn float">Prev</a>
+    <a href="ag-ep5.html" class="float float-right">Next</a>
+  </div>
+  <footer class="footer">
+      <p>© <span class="text-pink">nmwrites</span> 2021 - <span class="year"></span></p>
+      <a href="about.html">About</a>
+      | <a href="nmag.html">Stories</a>
+    </footer>
+  <script>
+    let seemore = document.querySelector(".seemore")
+    let seemoreEls = document.getElementsByClassName("sm-el")
+    console.log(seemoreEls)
+    
+    let sm = 0 
+    let isseemore = false
+    seemore.addEventListener("click", () =>{
+      sm += 1 
+      for (let el=0; el < seemoreEls.length; el++){
+        console.log(el)
+        if (sm % 2 != 0){
+        seemoreEls[el].style.display = "block"
+        seemore.innerText = "See less..."
+        } else {
+        seemoreEls[el].style.display = "none"
+        seemore.innerText = "See more..."
+        }
+      }
+    })
+    
+    let date = new Date()
+    let year = date.getFullYear()
+    document.querySelector(".year").innerHTML = year
+
+    let speech = new SpeechSynthesisUtterance()
+    let tag = document.querySelector(".speaker")
+    let msg = document.querySelector(".section")
+
+    tag.addEventListener("click",() => {
+    let mssg = msg.innerText
+    console.log(mssg)
+    speech.text = mssg;
+    speechSynthesis.speak(speech)
+    
+    let voice = speechSynthesis.getVoices()
+    speech.voice = voice[15]
+    speech.lang = "en-US"
+    
+    let interval = setInterval(() => {
+      if (speechSynthesis.speaking){
+        tag.classList.add("spk")
+        clearInterval(interval)
+      }
+    },100)
+  })
+    </script>
+</body>
+</html>

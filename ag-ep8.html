@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Abandoned Genius - Episode 8</title>
+  <link rel="stylesheet" href="episodes.css">
+  <link rel="stylesheet" href="nmag.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="links">
+      <span class="logo">Nmwrites</span>
+      <a href="nmag.html">Home</a>
+      <a href="ag-ep1.html">Episode 1</a>
+      <a href="ag-ep2.html">Episode 2</a>
+      <a href="ag-ep3.html">Episode 3</a>
+      <a href="ag-ep4.html" class="sm-el">Episode 4</a>
+      <a href="ag-ep5.html" class="sm-el">Episode 5</a>
+      <a href="ag-ep6.html" class="sm-el">Episode 6</a>
+      <a href="ag-ep7.html" class="sm-el">Episode 7</a>
+      <a href="ag-ep8.html" class="sm-el">Episode 8</a>
+      <a href="ag-ep9.html" class="sm-el">Episode 9</a>
+      <a href="ag-ep10.html" class="sm-el">Episode 10</a>
+    </nav>
+    <button class="seemore">See more...</button>
+  </header>
+  <div class="cont">
+    <button class="seemore btn float-right speaker">&#128266;</button>
+    <section class="section">
+      <h1>The Abandoned Genius</h1>
+      <h2>Episode 8</h2>
+      <pre class="story-content">
+After flipping through the pages of the Bible, I felt overwhelmed by the content of the book.
+
+Although I was never thought how to read, I never knew how to even do so. I could only imagine the letters of the book with what I could actually speak.
+
+' I asked for Mr. God and she gave me this...', I thought.
+
+'what does she want me to do with it? ', I questioned.
+
+After I was unable to figure out what to do, my attention was captured by the sight of some kids going to school.
+
+They reminded me of how uniform the trees were in the forest.
+
+They looked like the ants I saw marching around in uniform.
+
+While I thought about all these, the young woman that had mystified Mr. God to me appeared.
+
+... butterflies in my belly when I saw her.
+
+"Hi, " she grinned.
+
+"Hi..."
+
+"Um... I'm really sorry, I left without a word, I didn't know what to say yesterday but I went to seek Mr. God as you requested to know what to say. "
+
+She spoke intelligently, like one from my race...
+
+Although she rose more questions in my heart when she said she had to seek Mr. God.
+
+' Who is he? Why can't I see him myself? ', I thought.
+
+She then picked from my mind and said...
+
+" Everyone can see him..."
+
+I was shocked! She knew exactly what was bordering me at the time.
+
+" He is everywhere..."
+She added.
+
+"Everywhere?"
+"How?"
+I questioned.
+
+She sat down comfortably beside me and told me the TRUTH!
+
+She told me what I never knew existed.
+
+Overtime, she became really close to me. She told me alot of Bible stories and their morals...
+
+She also guided me on how to go through the Bible she gave me.
+
+She said we could talk to God through what is known as "Prayer..."
+
+" What is your name?", I asked.
+
+"Andrella "
+"...and you?"
+
+I told her mine.
+
+I then shared my experiences with her, she consoled me overtime and assured me that God was always with me and would always be.
+
+She assured me of seeing a mother and a father in God.
+
+She then added that if at all I lost anything, God was going to restore it in no time soon.
+
+***
+
+After about two years, Andrella had become a really close friend, although a street hawker like me, she hawked strawberries.
+
+I was now twelve...I sat at my usual location where a lot of customers patronized me more.
+
+I was suddenly captivated by the sight of woman who halted just right in front of me.
+
+She wore dark glasses and a beautiful hat that made her stand out. Her dark jeep shone under the sunlight.
+
+I was at once surprised that the woman walked towards me. She approached me and asked me how I was doing...
+
+" I am fine ma'am, " I replied.
+
+"You look great ma'am..." I admired.
+
+She was surprised, she smiled and thanked me.
+
+" Which one would you love to buy? Pears, Oranges or apples? " I asked pointing the fruits I was hawking.
+
+"You look cute..." She admired pointing my blue eyes.
+
+"Not I alone..." I replied pointing at a two boys some distance away who also had blue eyes.
+
+"Oh..." She sighed.
+
+"The apples..." She suggested.
+
+While I took my time packaging the fruits, I was drawn aback by her question...
+
+"Do you go to school?"
+
+"No!"
+
+"How about your Parents?"
+
+"I don't know..."
+
+"If I ask you to come with me would you?"
+
+...
+
+I gaped at her ...
+
+' why would she want me to come with her? ',
+I thought.
+
+" I want to put you through school..."
+She suggested.
+
+"I'd love that..."
+I said.
+
+"Is that a 'Yes' ?"
+She asked to be sure.
+
+I nodded in the affirmative
+
+She smiled...
+      </pre>
+
+    <small>✍️ Bala Mathias.</small>
+    </section>
+    <a href="ag-ep7.html" class="btn float">Prev</a>
+    <a href="ag-ep9.html" class="float float-right">Next</a>
+  </div>
+  <footer class="footer">
+      <p>© <span class="text-pink">nmwrites</span> 2021 - <span class="year"></span></p>
+      <a href="about.html">About</a>
+      | <a href="nmag.html">Stories</a>
+    </footer>
+  <script>
+    let seemore = document.querySelector(".seemore")
+    let seemoreEls = document.getElementsByClassName("sm-el")
+    console.log(seemoreEls)
+    
+    let sm = 0 
+    let isseemore = false
+    seemore.addEventListener("click", () =>{
+      sm += 1 
+      for (let el=0; el < seemoreEls.length; el++){
+        console.log(el)
+        if (sm % 2 != 0){
+        seemoreEls[el].style.display = "block"
+        seemore.innerText = "See less..."
+        } else {
+        seemoreEls[el].style.display = "none"
+        seemore.innerText = "See more..."
+        }
+      }
+    })
+    
+    let date = new Date()
+    let year = date.getFullYear()
+    document.querySelector(".year").innerHTML = year
+
+    let speech = new SpeechSynthesisUtterance()
+    let tag = document.querySelector(".speaker")
+    let msg = document.querySelector(".section")
+
+    tag.addEventListener("click",() => {
+    let mssg = msg.innerText
+    console.log(mssg)
+    speech.text = mssg;
+    speechSynthesis.speak(speech)
+    
+    let voice = speechSynthesis.getVoices()
+    speech.voice = voice[15]
+    speech.lang = "en-US"
+    
+    let interval = setInterval(() => {
+      if (speechSynthesis.speaking){
+        tag.classList.add("spk")
+        clearInterval(interval)
+      }
+    },100)
+  })
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Abandoned Genius</title>
+  <link rel="stylesheet" href="nmag.css">
+  <style>
+  </style>
+</head>
+<body>
+  <header class="header">
+    <nav class="links">
+      <span class="logo">Nmwrites</span>
+      <a href="nmag.html">Home</a>
+      <a href="ag-ep1.html">Episode 1</a>
+      <a href="ag-ep2.html">Episode 2</a>
+      <a href="ag-ep3.html">Episode 3</a>
+      <a href="ag-ep4.html" class="sm-el">Episode 4</a>
+      <a href="ag-ep5.html" class="sm-el">Episode 5</a>
+      <a href="ag-ep6.html" class="sm-el">Episode 6</a>
+      <a href="ag-ep7.html" class="sm-el">Episode 7</a>
+      <a href="ag-ep8.html" class="sm-el">Episode 8</a>
+      <a href="ag-ep9.html" class="sm-el">Episode 9</a>
+      <a href="ag-ep10.html" class="sm-el">Episode 10</a>
+    </nav>
+    <button class="seemore">See more...</button>
+  </header>
+    <div class="container">
+    <main>
+      <a href="ag-ep1.html" class="td-none">
+        <section class="book-cover">
+        <h2 class="title"><span class="text-white">The</span> <span class="text-opac">Abandoned</span> Genius</h2>
+        <p class="author">Bala Mathias</p>
+        <small class="nmwrites">© nmwrites</small>
+      </section>
+      </a>
+    </main>
+  </div>
+    <footer class="footer">
+      <p>© <span class="text-pink">nmwrites</span> 2021 - <span class="year"></span></p>
+      <a href="about.html">About</a>
+      | <a href="nmag.html">Stories</a>
+    </footer>
+  <script>
+    let seemore = document.querySelector(".seemore")
+    let seemoreEls = document.getElementsByClassName("sm-el")
+    console.log(seemoreEls)
+    
+    let sm = 0 
+    let isseemore = false
+    seemore.addEventListener("click", () =>{
+      sm += 1 
+      for (let el=0; el < seemoreEls.length; el++){
+        console.log(el)
+        if (sm % 2 != 0){
+        seemoreEls[el].style.display = "block"
+        seemore.innerText = "See less..."
+        } else {
+        seemoreEls[el].style.display = "none"
+        seemore.innerText = "See more..."
+        }
+      }
+    })
+    
+    let date = new Date()
+    let year = date.getFullYear()
+    document.querySelector(".year").innerHTML = year
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin:0;
+  padding:0 ;
+  font-family: arial;
+}
+
+.header{
+  background: grey;
+}
+.links{
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: grey;
+}
+.links a{
+  padding: 8px 10px;
+  text-decoration: none;
+  color:#fff;
+}
+.speaker{
+  font-size:20px;
+}
+
+.seemore{
+  background: inherit;
+  color:aliceblue;
+  border:none;
+  padding:8px 10px;
+}
+.seemore:focus{
+  outline:none;
+  opacity:0.7;
+}
+
+.seemore:hover{
+  background:#938f8f;
+}
+
+.sm-el{
+  display:none;
+}
+
+
+@media only screen and (max-width:676px){
+  .links{
+    flex-direction: column;
+  }
+}
+
+.logo{
+  padding: 8px 10px;
+  font-weight: 600;
+  color: #f2c2f2;
+  font-size:16px;
+}
+
+.container{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  webkit-align-items: center;
+  webkit-justify-content: center;
+}
+
+.book-cover{
+  padding: 50% 30%;
+  position: relative;
+  margin-top:120px;
+  border-radius: 4px;
+  border-left: 8px solid grey;
+  background-image: url('book2.jpg');
+  background-position:center;
+  background-size: cover;
+  background-repeat:no-repeat;
+  color:white;
+  box-shadow: 2px 2px 4px rgba(0,0,0,.72);
+}
+.text-white{
+  color: #fff;
+}
+.text-opac{
+  opacity:0.5;
+}
+
+.title{
+  color:rgba(0,0,0,.8);
+  text-shadow: 2px 2px 4px rgba(0,0,0,.73);
+}
+
+.author{
+  text-shadow: rgba(0,0,0,0.6);
+  position: absolute;
+  bottom:5px;
+  left:5px;
+}
+
+.td-none{
+  text-decoration: none;
+}
+
+.story-content{
+  white-space: pre-wrap;
+  overflow-x: auto;
+  font-family: arial;
+  line-height:35px;
+  font-size:18px;
+}
+
+.nmwrites{
+  position:absolute;
+  bottom:5px;
+  right:5px;
+  text-shadow: 4px 4px 8px rgba(0,0,0,0.7);
+}
+
+.footer{
+  padding: 20px 10px;
+  text-align:center;
+  color:white;
+  margin-top:40px;
+  background-color:grey;
+  bottom:0;
+}
+.footer a{
+  color:#fff;
+}
+
+.spk{
+  animation: speak 1s linear;
+  animation-iteration-count: 12;
+}
+
+@keyframes speak{
+  0%{
+    transform: scale(0.5)
+  }
+  50%{
+    transform: scale(1)
+  }
+  100%{
+    transform: scale(0.5)
+  }
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Abandoned Genius - Episode 5</title>
+  <link rel="stylesheet" href="episodes.css">
+  <link rel="stylesheet" href="nmag.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="links">
+      <span class="logo">Nmwrites</span>
+      <a href="nmag.html">Home</a>
+      <a href="ag-ep1.html">Episode 1</a>
+      <a href="ag-ep2.html">Episode 2</a>
+      <a href="ag-ep3.html">Episode 3</a>
+      <a href="ag-ep4.html" class="sm-el">Episode 4</a>
+      <a href="ag-ep5.html" class="sm-el">Episode 5</a>
+      <a href="ag-ep6.html" class="sm-el">Episode 6</a>
+      <a href="ag-ep7.html" class="sm-el">Episode 7</a>
+      <a href="ag-ep8.html" class="sm-el">Episode 8</a>
+      <a href="ag-ep9.html" class="sm-el">Episode 9</a>
+      <a href="ag-ep10.html" class="sm-el">Episode 10</a>
+    </nav>
+    <button class="seemore">See more...</button>
+  </header>
+  <div class="cont">
+    <button class="seemore btn float-right speaker">&#128266;</button>
+    <section class="section">
+      <h1>The Abandoned Genius</h1>
+      <h2>Episode 5</h2>
+      <p>Nights were becoming more dreadful and risky for me.
+
+         Although, I had adapted a bit to the environment but hardly did a day pass by that I did never had a bad time.
+        </p>
+
+    <p>I developed a feeling that there was something better out there!
+
+     At least, I could smell technology a bit. I had to live to fulfill my aspirations.
+    </p>
+
+    <p>
+      I understood my home, I was moved to make a new move.
+
+      I could barely sum up how old I had become, maybe ten or thereabout.
+    </p>
+
+    <p>________</p>
+
+   <p>I drew my plan and concluded on taking my leave for the towns the following day.
+
+     I sat all night thinking and reminiscing about those forest moments, how I ate trees to grow.
+    </p>
+
+    <p>
+      I could see the stars glaring and promising hope, I saw for the last time in the woods the sun set.
+
+        To my humble birds, we sang our final lyrics.
+
+        Morning came by quickly, I could see myself being groomed together to commence a life search journey.
+    </p>
+
+     <p>
+       I trekked a few miles and had the feeling that I was either going denser or maybe worse.
+
+      Although quite nervous about any beastly encounter, I walked stealthily.
+
+      In order to increase the precision of my journey, I traced the position of the sun by and by.
+     </p>
+
+<small>_____</small>
+
+     <p>
+       After a few more miles, I was welcomed by a civilization that lacked quietness as opposed to mine.
+
+       And a flash through my mind recalled the moments of buzzing flies and chirping birds.  Well, I was seeing a total opposite.
+     </p>
+
+    <p>I  made myself comfortable on an extremely low cliff by the tarred road.
+
+      After taking a few moments of relaxation, I watched some funny scenes on display... How two tired wheels moved from place to place with people without slipping off.
+      </p>
+
+     <p>
+       I wondered to some extent how possible that was...
+
+      At this point, it was getting darker and I felt a rumble and a thunderstorm in my stomach.
+
+      I yawned extending my jaws for a few more seconds more than normal.
+     </p>
+
+    <p>
+      The realities of the streets had just been laid affront me by fate to conquer!
+
+      ...Yes! I slept on empty stomach and no one cared about anybody...
+At this point, I missed where I was coming from.
+    </p>
+
+
+    <p>_____</p>
+
+    <p>I was a wasting genius!</p>
+    <small>✍️ Bala Mathias.</small>
+    </section>
+    <a href="ag-ep4.html" class="btn float">Prev</a>
+    <a href="ag-ep6.html" class="float float-right">Next</a>
+  </div>
+  <footer class="footer">
+      <p>© <span class="text-pink">nmwrites</span> 2021 - <span class="year"></span></p>
+      <a href="about.html">About</a>
+      | <a href="nmag.html">Stories</a>
+    </footer>
+  <script>
+    let seemore = document.querySelector(".seemore")
+    let seemoreEls = document.getElementsByClassName("sm-el")
+    console.log(seemoreEls)
+    
+    let sm = 0 
+    let isseemore = false
+    seemore.addEventListener("click", () =>{
+      sm += 1 
+      for (let el=0; el < seemoreEls.length; el++){
+        console.log(el)
+        if (sm % 2 != 0){
+        seemoreEls[el].style.display = "block"
+        seemore.innerText = "See less..."
+        } else {
+        seemoreEls[el].style.display = "none"
+        seemore.innerText = "See more..."
+        }
+      }
+    })
+    
+    let date = new Date()
+    let year = date.getFullYear()
+    document.querySelector(".year").innerHTML = year
+
+    let speech = new SpeechSynthesisUtterance()
+    let tag = document.querySelector(".speaker")
+    let msg = document.querySelector(".section")
+
+    tag.addEventListener("click",() => {
+    let mssg = msg.innerText
+    console.log(mssg)
+    speech.text = mssg;
+    speechSynthesis.speak(speech)
+    
+    let voice = speechSynthesis.getVoices()
+    speech.voice = voice[15]
+    speech.lang = "en-US"
+    
+    let interval = setInterval(() => {
+      if (speechSynthesis.speaking){
+        tag.classList.add("spk")
+        clearInterval(interval)
+      }
+    },100)
+  })
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Abandoned Genius - Episode 1</title>
+  <link rel="stylesheet" href="episodes.css">
+  <link rel="stylesheet" href="nmag.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="links">
+      <span class="logo">Nmwrites</span>
+      <a href="nmag.html">Home</a>
+      <a href="ag-ep1.html">Episode 1</a>
+      <a href="ag-ep2.html">Episode 2</a>
+      <a href="ag-ep3.html">Episode 3</a>
+      <a href="ag-ep4.html" class="sm-el">Episode 4</a>
+      <a href="ag-ep5.html" class="sm-el">Episode 5</a>
+      <a href="ag-ep6.html" class="sm-el">Episode 6</a>
+      <a href="ag-ep7.html" class="sm-el">Episode 7</a>
+      <a href="ag-ep8.html" class="sm-el">Episode 8</a>
+      <a href="ag-ep9.html" class="sm-el">Episode 9</a>
+      <a href="ag-ep10.html" class="sm-el">Episode 10</a>
+    </nav>
+    <button class="seemore">See more...</button>
+  </header>
+  <div class="cont">
+    <button class="seemore btn float-right speaker">&#128266;</button>
+    <section class="section">
+      <h1>The Abandoned Genius</h1>
+      <h2>Episode One</h2>
+      <p>It was the middle of summer that I first opened my eyes to behold the new world I had appeared in and the applauding hands that rejoiced over my coming.</p>
+
+       <p>I could recall the surrounding mysteries of my birth that led to my tender exposure to the cruel fate of nature.</p>
+
+       <p>Many said I was born with a tooth, unlike other children in my little and tender community.</p>
+
+       <p>I emerged from a system that held some supernatural beliefs about the birth of Children.</p>
+
+       <p>Children whose birth were as mysterious as mine were either executed or abandoned in the forest that the little village had lost renowned hunters to.</p>
+
+      <p>To add to the pack, I also had natural blue eyes! This aroused suspicion among the community leaders who held the customs and traditions of my culture.</p>
+
+     <p>Rather than lament over what had ensued, my parents were rather happy as they saw me to be a unique child.</p>
+
+    <p>After about eleven days of my birth, I could speak! I could pronounce words rather than cry.</p>
+
+    <p>This event turned the whole world against me! It had never happened before in the entire community and the spread out regions!</p>
+
+    <p>"That boy must be cursed!" One of the elders exclaimed. </p>
+
+    <p>"He will surely bring badluck to the community if he is not given to the "evil forest". Another suggested.</p>
+
+    <p>The rest of the leaders took counsel and drew a conclusion that I should be abandoned in the evil forest.</p>
+
+    <p>I was only eleven days old!</p>
+
+    <p>When it was the following day, my Parents were summoned by the leaders of the community. The resolution of the council was laid affront them.</p>
+
+    <p>In my culture, one dare not reject the resolution of the council as it was believed to have emerged from experienced traditionalists.</p>
+
+    <p>"The child must not spend more than two weeks in the land!" One of the elders stressed.</p>
+
+    <p>"Yes!" The rest chorused.</p>
+
+    <p>The community Chief was pleased with the council's resolution. He presided over the matter and rendered his judgement in their favour.</p>
+
+    <p>My parents were dumbfounded, unable to utter their exercisable freedom.</p>
+
+    <p>Since it was already the twelfth day, I was due to be sent to the woods.<p>
+
+    <p>I was seized from my own Parents by some mighty men of valor on the order of the council, cuddled and saddled like a horse up to the woods.</p>
+
+    <p>I was left all alone, wrapped in the very first linen that touched my body.</p>
+
+    <p>In my innocence, I smiled to the butterflies that hovered over my head.</p>
+
+    <p>I could enjoy the melodious sweetness of the tunes of the singing birds. The breeze that led the dry leaves brushed over me and made a companion the dry leaves to my tiny home.</p>
+
+    <p>I was left to the view of the forest trees, a baby to crave for life at such a tender age! </p>
+
+    <small>✍️ Bala Mathias.</small>
+    </section>
+    <a href="nmag.html" class="btn float">Prev</a>
+    <a href="ag-ep2.html" class="float float-right">Next</a>
+  </div>
+  <footer class="footer">
+      <p>© <span class="text-pink">nmwrites</span> 2021 - <span class="year"></span></p>
+      <a href="about.html">About</a>
+      | <a href="nmag.html">Stories</a>
+    </footer>
+  <script>
+    let seemore = document.querySelector(".seemore")
+    let seemoreEls = document.getElementsByClassName("sm-el")
+    console.log(seemoreEls)
+    
+    let sm = 0 
+    let isseemore = false
+    seemore.addEventListener("click", () =>{
+      sm += 1 
+      for (let el=0; el < seemoreEls.length; el++){
+        console.log(el)
+        if (sm % 2 != 0){
+        seemoreEls[el].style.display = "block"
+        seemore.innerText = "See less..."
+        } else {
+        seemoreEls[el].style.display = "none"
+        seemore.innerText = "See more..."
+        }
+      }
+    })
+    
+    let date = new Date()
+    let year = date.getFullYear()
+    document.querySelector(".year").innerHTML = year
+
+    let speech = new SpeechSynthesisUtterance()
+    let tag = document.querySelector(".speaker")
+    let msg = document.querySelector(".section")
+
+    tag.addEventListener("click",() => {
+    let mssg = msg.innerText
+    console.log(mssg)
+    speech.text = mssg;
+    speechSynthesis.speak(speech)
+    
+    let voice = speechSynthesis.getVoices()
+    speech.voice = voice[15]
+    speech.lang = "en-US"
+    
+    let interval = setInterval(() => {
+      if (speechSynthesis.speaking){
+        tag.classList.add("spk")
+        clearInterval(interval)
+      }
+    },100)
+  })
+    </script>
+</body>
+</html>

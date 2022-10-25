@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Abandoned Genius - Episode 6</title>
+  <link rel="stylesheet" href="episodes.css">
+  <link rel="stylesheet" href="nmag.css">
+</head>
+<body>
+  <header class="header">
+    <nav class="links">
+      <span class="logo">Nmwrites</span>
+      <a href="nmag.html">Home</a>
+      <a href="ag-ep1.html">Episode 1</a>
+      <a href="ag-ep2.html">Episode 2</a>
+      <a href="ag-ep3.html">Episode 3</a>
+      <a href="ag-ep4.html" class="sm-el">Episode 4</a>
+      <a href="ag-ep5.html" class="sm-el">Episode 5</a>
+      <a href="ag-ep6.html" class="sm-el">Episode 6</a>
+      <a href="ag-ep7.html" class="sm-el">Episode 7</a>
+      <a href="ag-ep8.html" class="sm-el">Episode 8</a>
+      <a href="ag-ep9.html" class="sm-el">Episode 9</a>
+      <a href="ag-ep10.html" class="sm-el">Episode 10</a>
+    </nav>
+    <button class="seemore">See more...</button>
+  </header>
+  <div class="cont">
+    <button class="seemore btn float-right speaker">&#128266;</button>
+    <section class="section">
+      <h1>The Abandoned Genius</h1>
+      <h2>Episode 6</h2>
+      <p>
+        Just as the clouds delayed the emergence of the sun, I was also forced to wake from my nightly sleep by an unceasingly beeping car.
+
+        I was just lucky to have slept just the right duration without turning a side
+      </p>
+
+    <p>
+      Maybe I would not have been able to defeat the unceasing hunger that had ravaged my stomach scene.
+
+      Just about the same morning, I found my self surrounded by a group of Children staring me like a movie on screen.
+    </p>
+
+     <p>
+       Well, they might have felt my alien presence, unable to articulate any known language.
+
+       I could not stand the quite embarrassing scene so I left the place craving for food and they kept staring till I got to the bend where I was out of sight.
+
+       My attires couldn't spare their betrayal.
+     </p>
+
+    <p>
+      I was on the attires I was five years ago!
+
+     After moments of searching, I secured a dump where varieties of fruits had been disposed.
+
+     As a fruit friendly person, I filtered the eatables and left the scene.
+    </p>
+
+     <p>
+       I could still sight newer spectators staring in awe!
+
+       Well, I was not in anyway shy...
+
+     </p>
+     ****
+
+    <p>
+      I walked the ailes of the streets and markets like a bat flying at night.
+
+    At some point, I could sight Kids fairly my age struggling to make ends meet.
+
+     I was nonetheless spared by the hunger that had befallen them too.
+
+     I also felt the need to pause at a location and dream dreams.
+    </p>
+
+     <p>
+       The night caught up with me and I was wrapped up in sleep and till the following morning when the soldiers in my stomach intensified their war.
+
+       At some point, it felt like an aggressive soldier threw a missile at the other but missed the target thereby forcing the missile to land on the walls of my stomach causing so much pain.
+     </p>
+
+    <p>I endured it all...</p>
+    <p>______</p>
+
+    <p>
+      After about few days, I could no longer bear it, I was almost passing out.
+
+     I made series of applications to diverse territories that could hire my tender self to work for them.
+
+     I was plainly denied every offer...
+
+     I kept on feeding on dumps until I could speak like the others fluently.
+    </p>
+
+     <p>
+       I thought about life, Got myself a new attire from the dump and headed for a sachet water company to relearn life.
+
+       I bought on credit, made sales and returned the integer part of the money to the factory while I spent the rest on food.
+     </p>
+
+    <p>
+      I felt shelter was not very necessary at the point even though the heavens never spared their tears on me.
+
+      I gave in to sleeping by the corner of stores at night. No atom of fear resided in me.
+    </p>
+
+    <p>
+      Overtime, I was able to make more sales than my counterparts. I wondered why this set of people admired me.
+
+      I thought I was cursed or were they mocking me? All these thoughts flooded my mind but I could restore peace to my humble self at night whenever I watched the stars.Overtime, I was able to make more sales than my counterparts. I wondered why this set of people admired me.
+    </p>
+     <p>I thought I was cursed or were they mocking me? All these thoughts flooded my mind but I could restore peace to my humble self at night whenever I watched the stars.
+     ...yet people refused to see the inner me and the product of myself!
+     </p>
+
+    <p>
+      I was a wasting genius waiting to be discovered!
+    </p>
+    <small>✍️ Bala Mathias.</small>
+    </section>
+    <a href="ag-ep5.html" class="btn float">Prev</a>
+    <a href="ag-ep7.html" class="float float-right">Next</a>
+  </div>
+  <footer class="footer">
+      <p>© <span class="text-pink">nmwrites</span> 2021 - <span class="year"></span></p>
+      <a href="about.html">About</a>
+      | <a href="nmag.html">Stories</a>
+    </footer>
+  <script>
+    let seemore = document.querySelector(".seemore")
+    let seemoreEls = document.getElementsByClassName("sm-el")
+    console.log(seemoreEls)
+    
+    let sm = 0 
+    let isseemore = false
+    seemore.addEventListener("click", () =>{
+      sm += 1 
+      for (let el=0; el < seemoreEls.length; el++){
+        console.log(el)
+        if (sm % 2 != 0){
+        seemoreEls[el].style.display = "block"
+        seemore.innerText = "See less..."
+        } else {
+        seemoreEls[el].style.display = "none"
+        seemore.innerText = "See more..."
+        }
+      }
+    })
+    
+    let date = new Date()
+    let year = date.getFullYear()
+    document.querySelector(".year").innerHTML = year
+
+    let speech = new SpeechSynthesisUtterance()
+    let tag = document.querySelector(".speaker")
+    let msg = document.querySelector(".section")
+
+    tag.addEventListener("click",() => {
+    let mssg = msg.innerText
+    console.log(mssg)
+    speech.text = mssg;
+    speechSynthesis.speak(speech)
+    
+    let voice = speechSynthesis.getVoices()
+    speech.voice = voice[15]
+    speech.lang = "en-US"
+    
+    let interval = setInterval(() => {
+      if (speechSynthesis.speaking){
+        tag.classList.add("spk")
+        clearInterval(interval)
+      }
+    },100)
+  })
+    </script>
+</body>
+</html>
